@@ -1,0 +1,27 @@
+{
+  "name": "cfg-javascript",
+  "version": "0.0.1",
+  "description": "Creates the control flow graph for JavaScript code.",
+  "main": "./lib/styx.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "compile": "tsc -p src"
+  },
+  "keywords": [
+    "control",
+    "flow",
+    "graph",
+    "ast",
+    "estree"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.4.1"
+  },
+  "dependencies": {
+    "esprima": "^4.0.1"
+  }
+}
