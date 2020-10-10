@@ -1,0 +1,22 @@
+// $$func1
+digraph control_flow_graph {
+    node [shape = doublecircle] 5
+    node [shape = circle]
+    
+    // Unconditional edges
+    4 -> 7 [label = " timeSeries = $$params[0]"]
+    7 -> 8 [label = " duration = $$params[1]"]
+    9 -> 5 [label = " return 0"]
+    10 -> 11 [label = " total = 0"]
+    11 -> 12 [label = " i = 0"]
+    13 -> 14 [label = " total += Math.min(timeSeries[i + 1] - timeSeries[i], duration)"]
+    14 -> 12 [label = " i++"]
+    15 -> 5 [label = " return total + duration"]
+    
+    // Conditional edges
+    edge [color = red, fontcolor = red]
+    8 -> 9 [label = " timeSeries.length < 1"]
+    8 -> 10 [label = " !(timeSeries.length < 1)"]
+    12 -> 13 [label = " i < (timeSeries.length - 1)"]
+    12 -> 15 [label = " !(i < (timeSeries.length - 1))"]
+}
