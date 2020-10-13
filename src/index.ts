@@ -17,7 +17,7 @@ function parse(program: ESTree.Program, options?: ParserOptions): FlowProgram {
     throw Error(`The node type '${program.type}' is not supported`);
   }
 
-  var normalizedOptions = normalizeParserOptions(options);
+  const normalizedOptions = normalizeParserOptions(options);
 
   return Parser.parse(program, normalizedOptions);
 }
