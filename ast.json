@@ -1,1 +1,64 @@
-{"type":"Program","body":[{"type":"FunctionDeclaration","id":{"type":"Identifier","name":"main"},"params":[],"body":{"type":"BlockStatement","body":[{"type":"IfStatement","test":{"type":"Literal","value":true,"raw":"true"},"consequent":{"type":"BlockStatement","body":[{"type":"ReturnStatement","argument":{"type":"Literal","value":"I ❤️ u","raw":"\"I ❤️ u\""}}]},"alternate":null}]},"generator":false,"expression":false,"async":false}],"sourceType":"script"}
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "main"
+      },
+      "params": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "IfStatement",
+            "test": {
+              "type": "Literal",
+              "value": true,
+              "raw": "true"
+            },
+            "consequent": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "Literal",
+                    "value": "I ❤️ u",
+                    "raw": "\"I ❤️ u\""
+                  }
+                }
+              ]
+            },
+            "alternate": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "Literal",
+                    "value": false,
+                    "raw": "false"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "ReturnStatement",
+            "argument": {
+              "type": "Literal",
+              "value": 12,
+              "raw": "12"
+            }
+          }
+        ]
+      },
+      "generator": false,
+      "expression": false,
+      "async": false
+    }
+  ],
+  "sourceType": "script"
+}
