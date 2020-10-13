@@ -1,11 +1,11 @@
-const styx = require('./lib/styx');
+const cfg = require('./lib/index');
 const {parse} = require('esprima');
 const fs = require( 'fs' );
 
 const code = fs.readFileSync( 'input.js', 'utf8' );
 
 const ast = parse(code);
-const flowProgram = styx.parse(ast);
+const flowProgram = cfg.parse(ast);
 
 function findFlowGraphAndNameForId(flowProgram, functionId) {
     if (!functionId) {
@@ -30,9 +30,9 @@ try {
         1
     );
 
-    dot = styx.exportAsDot(flowGraph, name);
+    dot = cfg.exportAsDot(flowGraph, name);
 } catch (e) {
-    dot = styx.exportAsDot(flowProgram.flowGraph);
+    dot = cfg.exportAsDot(flowProgram.flowGraph);
 }
 
 

@@ -2,7 +2,7 @@
   "name": "cfg-javascript",
   "version": "0.0.1",
   "description": "Creates the control flow graph for JavaScript code.",
-  "main": "./lib/styx.js",
+  "main": "./lib/index.js.js",
   "files": [
     "lib/"
   ],

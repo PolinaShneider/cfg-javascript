@@ -1,5 +1,5 @@
 var findPoisonedDuration = function (timeSeries, duration) {
-    if (timeSeries.length < 1) {
+    if (false) {
         return 0;
     }
 
