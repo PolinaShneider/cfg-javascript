@@ -7,6 +7,8 @@ const code = fs.readFileSync( 'input.js', 'utf8' );
 const ast = parse(code);
 const flowProgram = cfg.parse(ast);
 
+fs.writeFile('ast.json', JSON.stringify(ast), 'utf8', () => {});
+
 function findFlowGraphAndNameForId(flowProgram, functionId) {
     if (!functionId) {
         return [flowProgram.flowGraph, "Main Program"];
