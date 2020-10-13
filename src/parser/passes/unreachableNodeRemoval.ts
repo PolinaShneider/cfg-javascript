@@ -7,13 +7,9 @@ import { ControlFlowGraph, FlowNode, NodeType } from "../../flow";
 export { removeUnreachableNodes };
 
 function removeUnreachableNodes(graph: ControlFlowGraph) {
-  // First, traverse the graph following only outgoing edges
-  // to find and collect all reachable nodes
   let reachableNodes = NumericMap.create<FlowNode>();
   collectReachableNodes(graph.entry, reachableNodes);
 
-  // Now, traverse the entire graph following edges in both directions
-  // to find and collect all unreachable nodes
   let unreachableNodes = NumericMap.create<FlowNode>();
   let visitedNodes = NumericSet.create();
 
@@ -26,7 +22,6 @@ function removeUnreachableNodes(graph: ControlFlowGraph) {
     );
   }
 
-  // Finally, delete unreachable (normal) nodes and their edges
   for (let { value: unreachableNode } of unreachableNodes.entries()) {
     if (unreachableNode.type === NodeType.Normal) {
       removeUnreachableNode(unreachableNode);

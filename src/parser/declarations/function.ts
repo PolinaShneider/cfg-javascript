@@ -69,8 +69,6 @@ function parseFunctionDeclaration(
   );
 
   if (completion.normal) {
-    // If we reached this point, the function didn't end with an explicit return statement.
-    // Thus, an implicit "undefined" is returned.
     let undefinedReturnValue: ESTree.Identifier = {
       type: ESTree.NodeType.Identifier,
       name: "undefined"

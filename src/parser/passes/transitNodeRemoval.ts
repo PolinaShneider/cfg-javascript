@@ -17,11 +17,8 @@ function optimizeNode(node: FlowNode, visitedNodes: NumericSet) {
 
   visitedNodes.add(node.id);
 
-  // Remember target nodes for later traversal
   let targetNodes = node.outgoingEdges.map(edge => edge.target);
 
-  // We want to simplify transit nodes, but we only ever remove normal nodes
-  // because we don't want to mess up references to entry or exit nodes
   if (
     node.incomingEdges.length === 1 &&
     node.outgoingEdges.length === 1 &&
@@ -44,14 +41,12 @@ function optimizeNode(node: FlowNode, visitedNodes: NumericSet) {
 }
 
 function optimizeTransitNode(transitNode: FlowNode, visitedNodes: NumericSet) {
-  // Remember the transit node's original target
   let originalTarget = transitNode.outgoingEdges[0].target;
 
   if (shouldRemoveTransitNode(transitNode)) {
     removeTransitNode(transitNode);
   }
 
-  // Recursively optimize, starting with the original target
   optimizeNode(originalTarget, visitedNodes);
 }
 
@@ -60,8 +55,6 @@ function shouldRemoveTransitNode(transitNode: FlowNode): boolean {
   let target = transitNode.outgoingEdges[0].target;
 
   for (let incomingTargetEdges of target.incomingEdges) {
-    // We only simplify transit nodes if their removal doesn't lead
-    // to a node being directly connected to another node by 2 edges
     if (incomingTargetEdges.source.id === sourceId) {
       return false;
     }
@@ -77,30 +70,23 @@ function removeTransitNode(transitNode: FlowNode) {
   let source = incomingEdge.source;
   let target = outgoingEdge.target;
 
-  // Decide whether to keep the incoming or the outgoing edge.
-  // If both are epsilon edges, it doesn't matter which one to keep.
   let [edgeToKeep, edgeToRemove] =
     incomingEdge.type === EdgeType.Epsilon
       ? [outgoingEdge, incomingEdge]
       : [incomingEdge, outgoingEdge];
 
-  // Redirect surviving edge
   edgeToKeep.source = source;
   edgeToKeep.target = target;
 
-  // Delete both edges from the source
   ArrayUtils.removeElementFromArray(edgeToRemove, source.outgoingEdges);
   ArrayUtils.removeElementFromArray(edgeToKeep, source.outgoingEdges);
 
-  // Delete both edges from the target
   ArrayUtils.removeElementFromArray(edgeToRemove, target.incomingEdges);
   ArrayUtils.removeElementFromArray(edgeToKeep, target.incomingEdges);
 
-  // Add the new edge to both source and target
   source.outgoingEdges.push(edgeToKeep);
   target.incomingEdges.push(edgeToKeep);
 
-  // Clear node
   transitNode.incomingEdges = [];
   transitNode.outgoingEdges = [];
 }

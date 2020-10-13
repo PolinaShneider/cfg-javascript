@@ -1,7 +1,7 @@
 import { Stack } from "../collections/stack";
 import IdGenerator from "../util/idGenerator";
 
-import { runOptimizationPasses } from "./passes/index";
+import { runOptimizationPasses } from "./passes";
 import * as AstPreprocessing from "./preprocessing/functionExpressionRewriter";
 import { parseStatements } from "./statements/statement";
 

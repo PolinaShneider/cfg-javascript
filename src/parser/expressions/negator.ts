@@ -53,14 +53,12 @@ function invertEqualityComparisonOperator(
 function invertLogicalExpression(
   logicalExpression: ESTree.LogicalExpression
 ): ESTree.LogicalExpression {
-  // The only two logical operators are && and ||
   let invertedOperator = logicalExpression.operator === "&&" ? "||" : "&&";
 
   return {
     type: ESTree.NodeType.LogicalExpression,
     operator: invertedOperator,
 
-    // Perform simplification according to De Morgan's laws
     left: negateTruthiness(logicalExpression.left),
     right: negateTruthiness(logicalExpression.right)
   };
