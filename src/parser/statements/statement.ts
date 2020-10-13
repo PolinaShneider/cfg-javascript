@@ -40,8 +40,6 @@ function parseStatements(
     let completion = parseStatement(statement, currentNode, context);
 
     if (!completion.normal) {
-      // If we encounter an abrupt completion, normal control flow is interrupted
-      // and the following statements aren't executed
       return completion;
     }
 
