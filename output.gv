@@ -1,8 +1,16 @@
-// main
+// ifElse
 digraph control_flow_graph {
-    node [shape = doublecircle] 5
-    node [shape = circle]
-    
-    // Unconditional edges
-    4 -> 5 [label = " return \"I ❤️ u\""]
+node [shape = box]
+
+// Unconditional edges
+"n = $$params[0]" -> "sum = 0"
+"sum = 0" -> "n > 0"
+"sum = 0" -> "!(n > 0)"
+"sum += 50" -> "return sum"
+"sum -= 40" -> "return sum"
+
+
+// Conditional edges
+"n > 0" -> "sum += 50"
+"!(n > 0)" -> "sum -= 40"
 }

@@ -5,6 +5,11 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "../lib/",
     "target": "es5",
-    "module": "commonjs"
+    "module": "commonjs",
+    "lib": [
+      "dom",
+      "es7",
+      "scripthost"
+    ]
   }
 }
