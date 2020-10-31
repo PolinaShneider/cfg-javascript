@@ -1,13 +1,10 @@
-# Generated output
-dist/
-lib/
-
-# JavaScript files transpiled from TypeScript
-src/*.js
-
-# WebStorm IDE
-.idea/
-
-# Node modules
-node_modules/
+node_modules
+components
+coverage
+.nyc_output
+npm-debug.log
+*.tgz
+*.patch
+*.diff
 .DS_Store
+.idea/

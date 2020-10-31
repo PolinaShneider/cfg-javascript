@@ -2,109 +2,154 @@
   "type": "Program",
   "body": [
     {
-      "type": "FunctionDeclaration",
-      "id": {
-        "type": "Identifier",
-        "name": "ifElse"
-      },
-      "params": [
+      "type": "VariableDeclaration",
+      "declarations": [
         {
-          "type": "Identifier",
-          "name": "n"
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "max",
+            "range": [
+              11,
+              14
+            ]
+          },
+          "init": {
+            "type": "Literal",
+            "value": null,
+            "raw": "null",
+            "range": [
+              17,
+              21
+            ]
+          },
+          "range": [
+            11,
+            21
+          ]
         }
       ],
-      "body": {
+      "kind": "let",
+      "range": [
+        7,
+        22
+      ]
+    },
+    {
+      "type": "IfStatement",
+      "test": {
+        "type": "BinaryExpression",
+        "operator": ">",
+        "left": {
+          "type": "Identifier",
+          "name": "a",
+          "range": [
+            27,
+            28
+          ]
+        },
+        "right": {
+          "type": "Identifier",
+          "name": "b",
+          "range": [
+            31,
+            32
+          ]
+        },
+        "range": [
+          27,
+          32
+        ]
+      },
+      "consequent": {
         "type": "BlockStatement",
         "body": [
           {
-            "type": "VariableDeclaration",
-            "declarations": [
-              {
-                "type": "VariableDeclarator",
-                "id": {
-                  "type": "Identifier",
-                  "name": "sum"
-                },
-                "init": {
-                  "type": "Literal",
-                  "value": 0,
-                  "raw": "0"
-                }
-              }
-            ],
-            "kind": "let"
-          },
-          {
-            "type": "IfStatement",
-            "test": {
-              "type": "BinaryExpression",
-              "operator": ">",
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
               "left": {
                 "type": "Identifier",
-                "name": "n"
+                "name": "max",
+                "range": [
+                  40,
+                  43
+                ]
               },
               "right": {
-                "type": "Literal",
-                "value": 0,
-                "raw": "0"
-              }
-            },
-            "consequent": {
-              "type": "BlockStatement",
-              "body": [
-                {
-                  "type": "ExpressionStatement",
-                  "expression": {
-                    "type": "AssignmentExpression",
-                    "operator": "+=",
-                    "left": {
-                      "type": "Identifier",
-                      "name": "sum"
-                    },
-                    "right": {
-                      "type": "Literal",
-                      "value": 50,
-                      "raw": "50"
-                    }
-                  }
-                }
+                "type": "Identifier",
+                "name": "a",
+                "range": [
+                  46,
+                  47
+                ]
+              },
+              "range": [
+                40,
+                47
               ]
             },
-            "alternate": {
-              "type": "BlockStatement",
-              "body": [
-                {
-                  "type": "ExpressionStatement",
-                  "expression": {
-                    "type": "AssignmentExpression",
-                    "operator": "-=",
-                    "left": {
-                      "type": "Identifier",
-                      "name": "sum"
-                    },
-                    "right": {
-                      "type": "Literal",
-                      "value": 40,
-                      "raw": "40"
-                    }
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "type": "ReturnStatement",
-            "argument": {
-              "type": "Identifier",
-              "name": "sum"
-            }
+            "range": [
+              40,
+              47
+            ]
           }
+        ],
+        "range": [
+          34,
+          49
         ]
       },
-      "generator": false,
-      "expression": false,
-      "async": false
+      "alternate": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "Identifier",
+                "name": "max",
+                "range": [
+                  61,
+                  64
+                ]
+              },
+              "right": {
+                "type": "Identifier",
+                "name": "b",
+                "range": [
+                  67,
+                  68
+                ]
+              },
+              "range": [
+                61,
+                68
+              ]
+            },
+            "range": [
+              61,
+              68
+            ]
+          }
+        ],
+        "range": [
+          55,
+          70
+        ]
+      },
+      "range": [
+        23,
+        70
+      ]
     }
   ],
-  "sourceType": "script"
+  "sourceType": "script",
+  "range": [
+    7,
+    70
+  ]
 }

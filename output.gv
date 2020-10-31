@@ -1,16 +1,14 @@
-// ifElse
 digraph control_flow_graph {
-node [shape = box]
-
-// Unconditional edges
-"n = $$params[0]" -> "sum = 0"
-"sum = 0" -> "n > 0"
-"sum = 0" -> "!(n > 0)"
-"sum += 50" -> "return sum"
-"sum -= 40" -> "return sum"
-
-
-// Conditional edges
-"n > 0" -> "sum += 50"
-"!(n > 0)" -> "sum -= 40"
+n0 [label="entry", style="rounded"]
+n1 [label="let max = null;"]
+n2 [label="a > b"]
+n3 [label="max = a"]
+n4 [label="exit", style="rounded"]
+n5 [label="max = b"]
+n0 -> n1 []
+n1 -> n2 []
+n2 -> n3 [color="green", label="true"]
+n2 -> n5 [color="red", label="false"]
+n3 -> n4 []
+n5 -> n4 []
 }
