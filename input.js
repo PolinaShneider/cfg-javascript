@@ -1,19 +1,25 @@
 // Max
-let max = null;
-if (a > b) {
-    max = a
-} else {
-    max = b
-}
+// let max = null;
+// if (a > b) {
+//     max = a
+// } else {
+//     max = b
+// }
 
 // Continue
-// let sum = 0;
-// for (let i = 0; i < b; i++) {
-//     if (i % 2) {
-//         continue;
-//     }
-//     sum += i;
-// }
+let sum = 0;
+let j = 0;
+while (j < 10) {
+    j++;
+    for (let i = 0; i < b; i++) {
+        if (i % 2) {
+            continue;
+        } else {
+            break;
+        }
+        sum += i;
+    }
+}
 
 // Bubble-sort
 // for (let i = 0; i < arr.length; i++) {
